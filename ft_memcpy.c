@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 17:22:11 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/27 19:27:42 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/27 20:03:23 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
         return (0);
     new_dest = (char *)dest;
     new_src = (char *)src;
-    while (i < n);
+    while (i < n)
     {
         new_dest[i] = new_src[i];
         i++;
