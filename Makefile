@@ -6,7 +6,7 @@
 #    By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 16:35:31 by gmoraes-          #+#    #+#              #
-#    Updated: 2021/09/27 11:56:41 by gmoraes-         ###   ########.fr        #
+#    Updated: 2021/09/27 12:18:44 by gmoraes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ fclean:
 	$(RM) $(OBJ) $(NAME)
 
 # CLEAN AND RECOMPILE 
-recomp:
+re:
 	make fclean
 	make all
+
+.PHONY: all clean fclean re
