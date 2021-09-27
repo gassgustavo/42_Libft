@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 01:01:20 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/27 17:23:59 by gmoraes-         ###   ########.fr       */
+/*   Created: 2021/09/27 15:43:32 by gmoraes-          #+#    #+#             */
+/*   Updated: 2021/09/27 16:04:02 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcpy(char *dest, const char *src, size_t n)
+int ft_atoi(const char *str)
 {
-    unsigned int    i;
+    int i;
+    int sign;
+    int nbr;
 
     i = 0;
-    if (n > 0)
+    sign = 1;
+    nbr = 0;
+    while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+        i++;
+    while (str[i] == '-' || str[i] == '+')
     {
-        while (src[i] != '\0' && i < (n - 1))
-        {
-            dest[i] = src[i];
-            i++;
-        }
-        dest[i] = '\0';
+        if (str[i] == '-')
+            sign *= -1;
+        i++;
     }
-    return (ft_strlen(src));
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        nbr = (nbr * 10) + (str[i] - 48);
+        i++;
+    }
+    return (nbr);
 }

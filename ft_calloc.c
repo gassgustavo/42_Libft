@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 01:01:20 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/27 17:23:59 by gmoraes-         ###   ########.fr       */
+/*   Created: 2021/09/27 17:01:27 by gmoraes-          #+#    #+#             */
+/*   Updated: 2021/09/27 17:10:02 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcpy(char *dest, const char *src, size_t n)
+void    *ft_calloc(size_t nmemb, size_t size)
 {
-    unsigned int    i;
+    char    *ptr;
 
-    i = 0;
-    if (n > 0)
-    {
-        while (src[i] != '\0' && i < (n - 1))
-        {
-            dest[i] = src[i];
-            i++;
-        }
-        dest[i] = '\0';
-    }
-    return (ft_strlen(src));
+    ptr = malloc((nmemb * size) * sizeof(char));
+    if (!ptr)
+        return (0);
+    ft_memset(ptr, 0, (nmemb * size));
+    return (ptr);
 }
