@@ -6,7 +6,7 @@
 #    By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 16:35:31 by gmoraes-          #+#    #+#              #
-#    Updated: 2021/09/27 12:18:44 by gmoraes-         ###   ########.fr        #
+#    Updated: 2021/09/27 18:21:42 by gmoraes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,10 @@ FLAGS = -Wall -Werror -Wextra
 
 # SOURCE FILES (Total: 14)
 SRCS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-		ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
-		ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c \
+		ft_toupper.c ft_tolower.c ft_atoi.c ft_bzero.c ft_calloc.c \
+		ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strncmp.c \
+		ft_strchr.c ft_strrchr.c ft_strdup.c ft_strnstr.c \
+		ft_memset.c \
 
 # OBJECT FILES
 OBJ = $(SRCS:%.c=%.o)
