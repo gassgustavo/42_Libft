@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:29:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/27 17:10:52 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/27 18:24:45 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char    *ft_strrchr(const char *str, int c);
 char    *ft_strdup(const char *str);
 char    *ft_strnstr(const char *str, const char *substr, size_t len);
 
-void    *ft_bzero(void *str, size_t n);
+void    ft_bzero(void *str, size_t n);
 void    *ft_calloc(size_t nmemb, size_t size);
 
 void    *ft_memset(void *str, int byte, size_t n);
