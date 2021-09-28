@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:48:23 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/28 18:54:57 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/28 19:27:53 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *str, void (*f)(unsigned int, char *))
 	unsigned int	i;
 
 	if (!str || !f)
-		return (0);
+		return ;
 	i = 0;
 	while (str[i] != '\0')
 	{
