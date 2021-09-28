@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 18:00:41 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/27 22:58:49 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/27 23:08:51 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ char    *ft_strrchr(const char *str, int c)
     if (str[0] == '\0')
         return (0);
     len = ft_strlen(str);
-    while (str[len] >= 0 && str[len] != c)
+    while (str[len] >= 0)
     {
+        if (str[len] == (unsigned char)c)
+            return ((char *)&str[len]);
         len--;
-    }
-    if (str[len] == c)
-    {
-        return ((char *)&str[len]);
     }
     return (0);
 }
