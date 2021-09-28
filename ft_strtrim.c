@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 10:10:12 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/28 16:18:31 by gmoraes-         ###   ########.fr       */
+/*   Created: 2021/09/28 14:32:19 by gmoraes-          #+#    #+#             */
+/*   Updated: 2021/09/28 16:11:29 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *str1, char const *str2)
+char	*ft_strtrim(char const *str1, char const *set)
 {
-	char	*n_str;
-	int		i;
-	int		j;
+	int	start;
+	int	len;
 
-	if (!str1 || !str2)
+	if (!str1 || !set)
 		return (0);
-	n_str = malloc((ft_strlen(str1) + ft_strlen(str2) + 1) * sizeof(char));
-	if (!n_str)
-		return (0);
-	i = 0;
-	while (str1[i] != '\0')
+	start = 0;
+	while (str1[start] == set)
 	{
-		n_str[i] = str1[i];
-		i++;
+		start++;
 	}
-	j = i;
-	i = 0;
-	while (str2[i] != '\0')
+	len = ft_strlen(str1);
+	while ((str1[len - 1]) == set)
 	{
-		n_str[j] = str2[i];
-		j++;
-		i++;
+		len--;
 	}
-	n_str[j] = '\0';
-	return (n_str);
+	len = len + 1;
+	return (ft_substr(str1, start, len));
 }
