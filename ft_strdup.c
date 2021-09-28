@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 16:09:58 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/27 16:23:06 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/27 23:01:51 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 char    *ft_strdup(const char *str)
 {
+    int     len;
     char    *dup;
 
-    dup = malloc(ft_strlen(str) + 1);
+    len = ft_strlen(str) + 1;
+    dup = malloc(len);
     if (!dup)
         return (0);
-    ft_strlcpy(dup, str, ft_strlen(str));
+    ft_strlcpy(dup, str, len);
     return (dup);
 }
