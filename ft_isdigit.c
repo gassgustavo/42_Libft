@@ -6,11 +6,11 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:36:07 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/09 09:36:55 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/28 10:31:33 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }

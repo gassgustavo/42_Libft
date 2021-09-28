@@ -6,7 +6,7 @@
 #    By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 16:35:31 by gmoraes-          #+#    #+#              #
-#    Updated: 2021/09/27 22:49:44 by gmoraes-         ###   ########.fr        #
+#    Updated: 2021/09/28 10:07:49 by gmoraes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = libft.a
 
 # COMPILER
-CC = gcc -c
+CC = gcc
 
 # FLAGS
 FLAGS = -Wall -Werror -Wextra
