@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:43:32 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/27 16:04:02 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/27 22:46:57 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int ft_atoi(const char *str)
             sign *= -1;
         i++;
     }
-    while (str[i] >= '0' && str[i] <= '9')
+    while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
     {
         nbr = (nbr * 10) + (str[i] - 48);
         i++;
     }
-    return (nbr);
+    return (nbr * sign);
 }
