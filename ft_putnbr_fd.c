@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 19:08:03 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/28 19:17:17 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/28 19:46:23 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putnbr_fd(147483648, fd);
 			return ;
 		}
-		n *= -1;
+		n = n * -1;
 	}
 	if (n > 9)
 		ft_putnbr_fd(n / 10, fd);
