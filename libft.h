@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:29:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/28 19:18:30 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/09/28 19:38:44 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_striteri(char *str, void (*f)(unsigned int, char *));
 
 // PART 2 - "put" functions
 void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
