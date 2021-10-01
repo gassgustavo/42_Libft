@@ -6,7 +6,7 @@
 #    By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 16:35:31 by gmoraes-          #+#    #+#              #
-#    Updated: 2021/10/01 18:18:43 by gmoraes-         ###   ########.fr        #
+#    Updated: 2021/10/01 18:19:47 by gmoraes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		\
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_itoa \
+		ft_itoa.c \
 
 # OBJECT FILES
 OBJ = $(SRCS:%.c=%.o)
@@ -58,5 +58,4 @@ fclean:
 re:
 	make fclean
 	make all
-
-.PHONY: all clean fclean re
+	
