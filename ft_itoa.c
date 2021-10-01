@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:12:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/01 18:11:47 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:21:23 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	ntochr(int n)
 	if (n < 10)
 		return (n + 48);
 	else
-		(n_to_chr(n % 10));
+		(ntochr(n % 10));
 }
 
 char	*ft_itoa(int n)
