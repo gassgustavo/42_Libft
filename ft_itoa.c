@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:12:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/01 18:28:19 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:30:42 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 	n_temp = n;
 	while (len > 0)
 	{
-		str[len] = ntochar(n_temp);
+		str[len] = ntochr(n_temp);
 		n_temp /= 10;
 		len--;
 	}
