@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:12:34 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 19:36:35 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:37:35 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@
 char	*ft_strnstr(const char *str, const char *substr, size_t len)
 {
 	size_t	i;
-	size_t	j;
 	size_t	substr_len;
 
 	i = 0;
-	j = 0;
 	if (substr[0] == '\0')
 		return ((char *)str);
 	substr_len = ft_strlen(substr);
