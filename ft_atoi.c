@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:43:32 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 17:47:59 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 17:49:09 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	ft_atoi(const char *s)
 	str = (char *)s;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			signal = -1;
+			signal *= -1;
 		i++;
 	}
 	while (ft_isdigit(str[i]))
