@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/27 15:43:32 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 18:04:49 by gmoraes-         ###   ########.fr       */
+/*   Created: 2021/10/03 18:07:56 by gmoraes-          #+#    #+#             */
+/*   Updated: 2021/10/03 18:08:08 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(str[i]))
 	{
 		num = (num * 10) + (str[i] - 48);
+		i++;
 	}
 	return (num * sign);
 }
