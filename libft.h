@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:29:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/01 18:18:34 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/02 17:02:23 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ void	ft_putnbr_fd(int n, int fd);
 
 // PART 2 - other functions
 char	*ft_itoa(int n);
-//char	**ft_split(char const *str, char c);
+char	**ft_split(char const *str, char c);
 
 #endif
