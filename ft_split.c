@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 03:45:31 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 04:10:58 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 15:06:24 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,40 +35,53 @@ static int	count_words(const char *str, char c)
 	return (word_num);
 }
 
-static char	**get_words(char const *s, char breaker, char **table)
+static char	**get_words(char const *str, char c, char **list)
 {
 	unsigned int	i;
-	unsigned int	j;
+	unsigned int	word_len;
 	unsigned int	k;
 
 	i = 0;
 	k = 0;
-	while (s[i])
+	while (str[i] != '\0')
 	{
-		if (s[i] == breaker)
+		if (str[i] != c)
+		{
+			word_len = 1;
+			while (str[i] != c)
+			{
+				word_len++;
+				i++;
+			}
+			list[k] = (char *)ft_calloc(word_len, sizeof(char));
+			ft_strlcpy(list[k], &str[i - word_len], word_len);
+			k++;
+		}
+		i++;
+		/*if (str[i] == c)
 			i++;
 		else
 		{
 			j = 0;
-			while (s[i] != breaker && s[i])
+			while (str[i] != c && str[i])
 			{
 				i++;
 				j++;
 			}
-			table[k] = (char *)ft_calloc(j + 1, sizeof(char));
-			ft_strlcpy(table[k], &s[i - j], j + 1);
+			list[k] = (char *)ft_calloc(j + 1, sizeof(char));
+			ft_strlcpy(list[k], &str[i - j], j + 1);
 			k++;
-		}
+		}*/
 	}
-	return (table);
+	return (list);
 }
 
-char	**ft_split(char const *s, char breaker)
+char	**ft_split(char const *str, char c)
 {
-	char	**table;
+	char	**list;
 
-	table = (char **)ft_calloc(count_words(s, breaker) + 1, sizeof(char *));
-	if (table)
-		return (get_words(s, breaker, table));
+	list = (char **)ft_calloc(count_words(str, c) + 1, sizeof(char *));
+	if (list)
+		return (get_words(str, c, list));
 	return (0);
 }
