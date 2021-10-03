@@ -6,13 +6,13 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:12:34 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 19:14:40 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:16:25 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *substr, size_t len)
+/*char	*ft_strnstr(const char *str, const char *substr, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -32,9 +32,9 @@ char	*ft_strnstr(const char *str, const char *substr, size_t len)
 		j++;
 	}
 	return (0);
-}
+}*/
 
-/*char	*ft_strnstr(const char *str, const char *substr, size_t len)
+char	*ft_strnstr(const char *str, const char *substr, size_t len)
 {
 	size_t	i;
 	size_t	substr_len;
@@ -43,13 +43,12 @@ char	*ft_strnstr(const char *str, const char *substr, size_t len)
 	if (substr[0] == '\0')
 		return ((char *)str);
 	substr_len = ft_strlen(substr);
-	while (str[i] != '\0' && len - 1 > 0)
+	while ((char *)str[i] != '\0' && len - 1 > 0)
 	{
-		if (ft_strncmp(&str[i], substr, substr_len) == 0)
+		if (ft_strncmp((char *)&str[i], substr, substr_len) == 0)
 			return ((char *)&str[i]);
 		i++;
 		len--;
 	}
 	return (0);
 }
-*/
