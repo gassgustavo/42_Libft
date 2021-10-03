@@ -6,20 +6,26 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 18:00:41 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 20:13:12 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 20:14:29 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int		len;
+#include "libft.h"
 
-	len = ft_strlen(s);
-	while (s[len] != (unsigned char)c && len >= 0)
-		len--;
-	if (s[len] != (unsigned char)c)
-		return (0);
-	return ((char *) &s[len]);
+char	*ft_strrchr(const char *str, int c)
+{
+	int		leng;
+
+	leng = ft_strlen(str);
+	if (!c)
+		return (str + leng);
+	while (leng >= 0)
+	{
+		if (str[leng] == (char)c)
+			return (&str[leng]);
+		leng--;
+	}
+	return (0);
 }
