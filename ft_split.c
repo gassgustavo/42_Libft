@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 01:31:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 03:26:46 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 03:34:38 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char **words(char const *str, char c, char **list)
 		if (str[i] != c)
 		{
 			word_len = 0;
-			while (str[i] != c /*&& str[i] != '\0'*/)
+			while (str[i] != c && str[i] != '\0')
 			{
 				i++;
 				word_len++;
@@ -62,38 +62,12 @@ static char **words(char const *str, char c, char **list)
 	return (list);
 }
 
-/*static char	**words(char const *str, char c, char **list)
-{
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
-
-	i = 0;
-	k = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == c)
-			i++;
-		else
-		{
-			j = 0;
-			while (str[i] != c && str[i] != '\0')
-			{
-				i++;
-				j++;
-			}
-			list[k] = (char *)ft_calloc(j + 1, sizeof(char));
-			ft_strlcpy(list[k], &str[i - j], j + 1);
-			k++;
-		}
-	}
-	return (list);
-}*/
-
 char	**ft_split(char const *str, char c)
 {
 	char	**list;
 
+	if (!str || !c)
+		return (0);
 	list = (char **)ft_calloc(count_words(str, c) + 1, sizeof(char *));
 	if (!list)
 		return (0);
