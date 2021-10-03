@@ -6,11 +6,9 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:43:32 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 18:02:32 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 18:04:49 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
