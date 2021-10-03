@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 01:31:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 03:24:09 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 03:26:46 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,28 +38,26 @@ static int	count_words(const char *str, char c)
 static char **words(char const *str, char c, char **list)
 {
 	int i;
-	int k;
-	int	trigger;
+	int j;
 	int	word_len;
 
 	i = 0;
-	k = 0;
+	j = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] != c)
 		{
 			word_len = 0;
-			while (str[i] != c && str[i] != '\0')
+			while (str[i] != c /*&& str[i] != '\0'*/)
 			{
-				word_len++;
 				i++;
+				word_len++;
 			}
-			list[k] = (char *)ft_calloc(word_len + 1, sizeof(char *));
-			ft_strlcpy(list[k], &str[i - word_len], word_len + 1);
-			k++;
+			list[j] = (char *)ft_calloc(word_len + 1, sizeof(char *));
+			ft_strlcpy(list[j], &str[i - word_len], word_len + 1);
+			j++;
 		}
-		else
-			i++;
+		i++;
 	}
 	return (list);
 }
