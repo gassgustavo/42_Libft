@@ -6,11 +6,34 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 03:45:31 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 03:48:06 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 04:04:34 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	count_words(const char *str, char c)
+{
+	unsigned int	i;
+	unsigned int	trigger;
+	unsigned int	word_num;
+
+	i = 0;
+	trigger = 0;
+	word_num = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != c && trigger == 0)
+		{
+			word_num++;
+			trigger = 1;
+		}
+		else if (str[i] == c)
+			trigger = 0;
+		i++;
+	}
+	return (word_num);
+}
 
 static int	count_words(const char *s, char breaker)
 {
