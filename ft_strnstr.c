@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:12:34 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 19:34:34 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:36:35 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,11 @@ char	*ft_strnstr(const char *str, const char *substr, size_t len)
 	if (substr[0] == '\0')
 		return ((char *)str);
 	substr_len = ft_strlen(substr);
-	while ((char *)&str[i] && (j < len))
+	while ((char *)&str[i] && len-- >= substr_len)
 	{
-		if ((ft_strncmp((char *)&str[i], (char *)substr, substr_len) == 0)
-			&& (j + substr_len <= len))
+		if (ft_strncmp((char *)&str[i], (char *)substr, substr_len) == 0)
 			return ((char *)&str[i]);
 		i++;
-		j++;
 	}
 	return (0);
 }
