@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 03:45:31 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 04:04:34 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 04:10:58 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,6 @@ static int	count_words(const char *str, char c)
 		i++;
 	}
 	return (word_num);
-}
-
-static int	count_words(const char *s, char breaker)
-{
-	unsigned int	i;
-	unsigned int	b_len;
-
-	i = 0;
-	b_len = 0;
-	while (s[i])
-	{
-		if (s[i] == breaker)
-			i++;
-		else
-		{
-			while (s[i] != breaker && s[i])
-				i++;
-			b_len++;
-		}
-	}
-	return (b_len);
 }
 
 static char	**get_words(char const *s, char breaker, char **table)
