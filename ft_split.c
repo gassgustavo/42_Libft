@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 01:31:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 03:34:38 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 03:39:49 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**ft_split(char const *str, char c)
 {
 	char	**list;
 
-	if (!str || !c)
+	if (!str)
 		return (0);
 	list = (char **)ft_calloc(count_words(str, c) + 1, sizeof(char *));
 	if (!list)
