@@ -6,33 +6,49 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:43:32 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 17:43:12 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 17:44:52 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+#include "libft.h"
+
+static int	ft_isspace(char c)
 {
-	int	i;
-	int	num;
-	int	sign;
+	if ((c == '\n')
+		|| (c == '\t')
+		|| (c == '\v')
+		|| (c == '\f')
+		|| (c == '\r')
+		|| (c == ' '))
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(const char *s)
+{
+	int		i;
+	int		signal;
+	int		response;
+	char	*str;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	while (str[i] == 32 || (str[i] >= 9 || str[i] <= 13))
+	signal = 1;
+	response = 0;
+	str = (char *)s;
+	while (ft_isspace(str[i]))
 		i++;
-	while (str[i] == 'i' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign *= -1;
+			signal = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	while (ft_isdigit(str[i]))
 	{
-		num = (num * 10) + (str[i] - 48);
+		response = (str[i] - '0') + (response * 10);
 		i++;
 	}
-	return (num * sign);
+	return (response * signal);
 }
