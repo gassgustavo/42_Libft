@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 03:45:31 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 15:06:24 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 15:09:51 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	**get_words(char const *str, char c, char **list)
 		if (str[i] != c)
 		{
 			word_len = 1;
-			while (str[i] != c)
+			while (str[i] != c && str[i] != '\0')
 			{
 				word_len++;
 				i++;
