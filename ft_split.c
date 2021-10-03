@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 01:31:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 03:22:57 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 03:24:09 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,40 @@ static int	count_words(const char *str, char c)
 	return (word_num);
 }
 
-static char	**words(char const *str, char c, char **list)
+static char **words(char const *str, char c, char **list)
 {
-	int	i;
-	int	j;
-	int	k;
+	int i;
+	int k;
+	int	trigger;
+	int	word_len;
+
+	i = 0;
+	k = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != c)
+		{
+			word_len = 0;
+			while (str[i] != c && str[i] != '\0')
+			{
+				word_len++;
+				i++;
+			}
+			list[k] = (char *)ft_calloc(word_len + 1, sizeof(char *));
+			ft_strlcpy(list[k], &str[i - word_len], word_len + 1);
+			k++;
+		}
+		else
+			i++;
+	}
+	return (list);
+}
+
+/*static char	**words(char const *str, char c, char **list)
+{
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
 	i = 0;
 	k = 0;
@@ -61,7 +90,7 @@ static char	**words(char const *str, char c, char **list)
 		}
 	}
 	return (list);
-}
+}*/
 
 char	**ft_split(char const *str, char c)
 {
