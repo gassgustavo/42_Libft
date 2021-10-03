@@ -5,71 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/03 01:31:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 03:39:49 by gmoraes-         ###   ########.fr       */
+/*   Created: 2021/10/03 03:45:31 by gmoraes-          #+#    #+#             */
+/*   Updated: 2021/10/03 03:48:06 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(const char *str, char c)
+static int	count_words(const char *s, char breaker)
 {
-	int		i;
-	int		word_num;
-	int		trigger;
+	unsigned int	i;
+	unsigned int	b_len;
 
 	i = 0;
-	word_num = 0;
-	trigger = 0;
-	while (str[i] != '\0')
+	b_len = 0;
+	while (s[i])
 	{
-		if (str[i] != c && trigger == 0)
+		if (s[i] == breaker)
+			i++;
+		else
 		{
-			trigger = 1;
-			word_num++;
+			while (s[i] != breaker && s[i])
+				i++;
+			b_len++;
 		}
-		else if (str[i] == c)
-			trigger = 0;
-		i++;
 	}
-	return (word_num);
+	return (b_len);
 }
 
-static char **words(char const *str, char c, char **list)
+static char	**get_words(char const *s, char breaker, char **table)
 {
-	int i;
-	int j;
-	int	word_len;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
 	i = 0;
-	j = 0;
-	while (str[i] != '\0')
+	k = 0;
+	while (s[i])
 	{
-		if (str[i] != c)
+		if (s[i] == breaker)
+			i++;
+		else
 		{
-			word_len = 0;
-			while (str[i] != c && str[i] != '\0')
+			j = 0;
+			while (s[i] != breaker && s[i])
 			{
 				i++;
-				word_len++;
+				j++;
 			}
-			list[j] = (char *)ft_calloc(word_len + 1, sizeof(char *));
-			ft_strlcpy(list[j], &str[i - word_len], word_len + 1);
-			j++;
+			table[k] = (char *)ft_calloc(j + 1, sizeof(char));
+			ft_strlcpy(table[k], &s[i - j], j + 1);
+			k++;
 		}
-		i++;
 	}
-	return (list);
+	return (table);
 }
 
-char	**ft_split(char const *str, char c)
+char	**ft_split(char const *s, char breaker)
 {
-	char	**list;
+	char	**table;
 
-	if (!str)
-		return (0);
-	list = (char **)ft_calloc(count_words(str, c) + 1, sizeof(char *));
-	if (!list)
-		return (0);
-	return (words(str, c, list));
+	table = (char **)ft_calloc(count_words(s, breaker) + 1, sizeof(char *));
+	if (table)
+		return (get_words(s, breaker, table));
+	return (0);
 }
