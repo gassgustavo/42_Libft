@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 03:45:31 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 15:09:51 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 15:12:26 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ static char	**get_words(char const *str, char c, char **list)
 	{
 		if (str[i] != c)
 		{
-			word_len = 1;
+			word_len = 0;
 			while (str[i] != c && str[i] != '\0')
 			{
 				word_len++;
 				i++;
 			}
-			list[k] = (char *)ft_calloc(word_len, sizeof(char));
-			ft_strlcpy(list[k], &str[i - word_len], word_len);
+			list[k] = (char *)ft_calloc(word_len + 1, sizeof(char));
+			ft_strlcpy(list[k], &str[i - word_len], word_len + 1);
 			k++;
 		}
 		i++;
@@ -80,6 +80,8 @@ char	**ft_split(char const *str, char c)
 {
 	char	**list;
 
+	if (!str)
+		return (0);
 	list = (char **)ft_calloc(count_words(str, c) + 1, sizeof(char *));
 	if (list)
 		return (get_words(str, c, list));
