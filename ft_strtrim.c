@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 14:32:19 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 20:43:32 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 20:44:49 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_strtrim(char const *str, char const *set)
 	size_t	start;
 	size_t	end;
 
+	start = 0;
 	if (!str || !set)
 		return (0);
 	while (str[start] != '\0' && strchr(set, str[start]))
