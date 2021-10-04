@@ -5,24 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 23:12:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 00:40:31 by gmoraes-         ###   ########.fr       */
+/*   Created: 2021/10/04 01:02:25 by gmoraes-          #+#    #+#             */
+/*   Updated: 2021/10/04 01:05:43 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_digits(int n)
+static int	nlen(int n)
 {
-	int	digit;
+	int	len;
 
-	digit = 1;
-	while (n / 10 != 0)
+	len = 1;
+	if (n < 0)
+		len++;
+	while ((n / 10) != 0)
 	{
-		n = n / 10;
-		digit++;
+		n /= 10;
+		len++;
 	}
-	return (digit);
+	return (len);
 }
 
 static char	ntochar(int n)
@@ -33,33 +35,29 @@ static char	ntochar(int n)
 		return (ntochar(n % 10));
 }
 
-static int	ft_negative(int n)
-{
-	return (n < 0);
-}
-
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		digit;
+	int		len;
 	int		n_temp;
+	char	*str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	n_temp = n * (1 - ft_negative(n) * 2);
-	digit = count_digits(n_temp);
-	str = (char *) malloc((ft_negative(n) + digit + 1) * sizeof(char));
+	len = nlen(n_temp);
+	str = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (0);
-	if (ft_negative(n))
-		str[0] = '-';
-	str[ft_negative(n) + digit] = '\0';
-	n_temp = n * (1 - ft_negative(n) * 2);
-	while (digit > 0)
+	if (n_temp < 0)
 	{
-		str[digit + ft_negative(n) - 1] = ntochar(n_temp);
-		n_temp = n_temp / 10;
-		digit--;
+		n_temp *= -1;
+		str[0] = '-';
+	}
+	str[len] = '\0';
+	while (len > 0)
+	{
+		str[len - 1] = ntochar(n_temp);
+		n_temp /= 10;
+		len--;
 	}
 	return (str);
 }
