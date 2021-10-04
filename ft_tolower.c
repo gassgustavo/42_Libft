@@ -6,18 +6,14 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 10:05:40 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/28 10:38:11 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:30:57 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-	{
 		return (c + 32);
-	}
 	else
-	{
 		return (c);
-	}
 }
