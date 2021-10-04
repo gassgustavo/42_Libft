@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:29:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 11:35:50 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:41:15 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 
-
 // PART 1 - other functions
 
 int		ft_toupper(int c);
@@ -55,7 +54,6 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
-
 
 // PART 2 - "str" functions
 
@@ -65,14 +63,12 @@ char	*ft_strtrim(char const *str1, char const *set);
 char	*ft_strmapi(char const *str, char (*f)(unsigned int, char));
 void	ft_striteri(char *str, void (*f)(unsigned int, char *));
 
-
 // PART 2 - "put" functions
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
 
 // PART 2 - other functions
 
