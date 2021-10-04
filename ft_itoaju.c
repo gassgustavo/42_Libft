@@ -36,12 +36,11 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	n_temp = n * (1 - ft_negative(n) * 2);
 	digit = count_digits(n_temp);
-	str = (char *) malloc((ft_negative(n) + digit + 1) * sizeof(char));
+	str = (char *)ft_calloc((ft_negative(n) + digit + 1), sizeof(char));
 	if (!str)
 		return (0);
 	if (ft_negative(n))
 		str[0] = '-';
-	str[ft_negative(n) + digit] = '\0';
 	n_temp = n * (1 - ft_negative(n) * 2);
 	while (digit > 0)
 	{
