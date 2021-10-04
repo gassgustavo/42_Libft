@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:12:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 00:29:37 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 00:30:30 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static size_t	count_digits(int n)
 {
 	size_t	len;
 
-	len = 1;
+	len = 0;
 	if (n < 0)
 		len++;
-	while (n /= 10 > 0)
+	while (n /= 10 != 0)
 	{
 		n /= 10;
 		len++;
