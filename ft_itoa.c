@@ -6,31 +6,31 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:12:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 00:33:35 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 00:40:31 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_alg(int n)
+static int	count_digits(int n)
 {
-	int	alg;
+	int	digit;
 
-	alg = 1;
-	while (n / 10 > 0)
+	digit = 1;
+	while (n / 10 != 0)
 	{
 		n = n / 10;
-		alg++;
+		digit++;
 	}
-	return (alg);
+	return (digit);
 }
 
-static char	ft_algtochr(int n)
+static char	ntochar(int n)
 {
 	if (n < 10)
 		return (n + 48);
 	else
-		return (ft_algtochr(n % 10));
+		return (ntochar(n % 10));
 }
 
 static int	ft_negative(int n)
@@ -40,26 +40,26 @@ static int	ft_negative(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*r;
-	int		alg;
+	char	*str;
+	int		digit;
 	int		n_temp;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	n_temp = n * (1 - ft_negative(n) * 2);
-	alg = ft_count_alg(n_temp);
-	r = (char *) malloc((ft_negative(n) + alg + 1) * sizeof(char));
-	if (!r)
+	digit = count_digits(n_temp);
+	str = (char *) malloc((ft_negative(n) + digit + 1) * sizeof(char));
+	if (!str)
 		return (0);
 	if (ft_negative(n))
-		r[0] = '-';
-	r[ft_negative(n) + alg] = '\0';
+		str[0] = '-';
+	str[ft_negative(n) + digit] = '\0';
 	n_temp = n * (1 - ft_negative(n) * 2);
-	while (alg > 0)
+	while (digit > 0)
 	{
-		r[alg + ft_negative(n) - 1] = ft_algtochr(n_temp);
+		str[digit + ft_negative(n) - 1] = ntochar(n_temp);
 		n_temp = n_temp / 10;
-		alg--;
+		digit--;
 	}
-	return (r);
+	return (str);
 }
