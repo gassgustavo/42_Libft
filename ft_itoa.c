@@ -6,58 +6,56 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:12:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 00:20:39 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 00:24:07 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	n_len(int n)
+static char	*get_string(char *str, size_t size, size_t num, int is_negative)
 {
-	int	len;
-
-	len = 1;
-	if (n < 0)
+	str[size] = 0;
+	while (size--)
 	{
-		n *= -1;
-		len++;
-	}
-	while (n / 10 > 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-static char	*n_tochar(char *str, size_t len, size_t n, int is_negative)
-{
-	str[len] = 0;
-	while (len--)
-	{
-		str[len] = (n % 10) + 48;
-		n /= 10;
+		str[size] = (num % 10) + 48;
+		num /= 10;
 	}
 	if (is_negative)
 		str[0] = '-';
 	return (str);
 }
 
+static size_t	num_counter(int num)
+{
+	size_t	len;
+
+	len = 1;
+	if (num < 0)
+		len++;
+	num /= 10;
+	while (num)
+	{
+		num /= 10;
+		len++;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
 	int		is_negative;
-	size_t	len;
+	size_t	n_len;
 	char	*str;
 
-	len = n_len(n);
+	n_len = num_counter(n);
 	is_negative = 0;
 	if (n < 0)
 	{
 		is_negative = 1;
 		n *= -1;
 	}
-	str = malloc(len + 1);
+	str = malloc(n_len + 1);
 	if (!str)
 		return (0);
-	return (n_tochar(str, len, (unsigned int)n, is_negative));
+	return (get_string(str, n_len, (unsigned int)n, is_negative));
 }
