@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 01:02:25 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 01:22:11 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 01:24:00 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ char	*ft_itoa(int n)
 		return (0);
 	if (ft_negative(n))
 		str[0] = '-';
-	n_temp = n * (1 - ft_negative(n) * 2);
 	while (len > 0)
 	{
 		str[len + ft_negative(n) - 1] = ntochar(n_temp);
