@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 10:10:12 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 11:27:04 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:40:17 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ char	*ft_strjoin(char const *str1, char const *str2)
 		new_str[i] = str1[i];
 		i++;
 	}
-	j = 0;
+	j = i;
+	i = 0;
 	while (str2[i] != '\0')
 	{
-		new_str[i] = str2[j];
-		i++;
+		new_str[j] = str2[i];
 		j++;
+		i++;
 	}
-	new_str[i] = '\0';
+	new_str[j] = '\0';
 	return (new_str);
 }
