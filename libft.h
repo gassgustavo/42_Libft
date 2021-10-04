@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 09:29:09 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 11:41:15 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:42:11 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-
 // PART 1 - "is" functions
 
 int		ft_isalpha(int c);
@@ -25,7 +24,6 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-
 
 // PART 1 - "str" functions
 
@@ -37,7 +35,6 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strdup(const char *str);
 char	*ft_strnstr(const char *str, const char *substr, size_t len);
-
 
 // PART 1 - "mem" functions
 
