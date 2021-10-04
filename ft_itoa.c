@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 01:02:25 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 01:08:31 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 01:12:06 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	count_digits(int n)
 	int	digit;
 
 	digit = 1;
+	if (n < 0)
+		digit++;
 	while (n / 10 != 0)
 	{
 		n = n / 10;
@@ -48,7 +50,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	n_temp = n * (1 - ft_negative(n) * 2);
 	digit = count_digits(n_temp);
-	str = (char *)ft_calloc((ft_negative(n) + digit + 1), sizeof(char));
+	str = (char *)ft_calloc((digit + 1), sizeof(char));
 	if (!str)
 		return (0);
 	if (ft_negative(n))
@@ -56,7 +58,7 @@ char	*ft_itoa(int n)
 	n_temp = n * (1 - ft_negative(n) * 2);
 	while (digit > 0)
 	{
-		str[digit + ft_negative(n) - 1] = ntochar(n_temp);
+		str[digit - 1] = ntochar(n_temp);
 		n_temp = n_temp / 10;
 		digit--;
 	}
