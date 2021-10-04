@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 17:18:06 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 23:05:18 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 23:08:36 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ char	*ft_strchr(const char *str, int c)
 		i++;
 	if (str[i] == (unsigned char)c)
 		return ((char *)&str[i]);
-	return (0);
+	else
+		return (0);
 }
