@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 01:02:25 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 01:16:26 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 01:18:22 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ static int	ft_negative(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
 	int		len;
 	int		n_temp;
+	char	*str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	n_temp = n * (1 - ft_negative(n) * 2);
-	len = nlen(n_temp);
+	len = nlen(n);
 	str = (char *)ft_calloc((ft_negative(n) + len + 1), sizeof(char));
 	if (!str)
 		return (0);
