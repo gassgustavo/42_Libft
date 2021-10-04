@@ -6,25 +6,23 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 01:02:25 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 01:12:06 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 01:16:26 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_digits(int n)
+static int	nlen(int n)
 {
-	int	digit;
+	int	len;
 
-	digit = 1;
-	if (n < 0)
-		digit++;
-	while (n / 10 != 0)
+	len = 1;
+	while ((n / 10) != 0)
 	{
-		n = n / 10;
-		digit++;
+		n /= 10;
+		len++;
 	}
-	return (digit);
+	return (len);
 }
 
 static char	ntochar(int n)
@@ -43,24 +41,24 @@ static int	ft_negative(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		digit;
+	int		len;
 	int		n_temp;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	n_temp = n * (1 - ft_negative(n) * 2);
-	digit = count_digits(n_temp);
-	str = (char *)ft_calloc((digit + 1), sizeof(char));
+	len = nlen(n_temp);
+	str = (char *)ft_calloc((ft_negative(n) + len + 1), sizeof(char));
 	if (!str)
 		return (0);
 	if (ft_negative(n))
 		str[0] = '-';
 	n_temp = n * (1 - ft_negative(n) * 2);
-	while (digit > 0)
+	while (len > 0)
 	{
-		str[digit - 1] = ntochar(n_temp);
+		str[len + ft_negative(n) - 1] = ntochar(n_temp);
 		n_temp = n_temp / 10;
-		digit--;
+		len--;
 	}
 	return (str);
 }
