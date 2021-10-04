@@ -6,20 +6,23 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:12:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 03:09:08 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 00:20:39 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	nlen(int n)
+static int	n_len(int n)
 {
 	int	len;
 
 	len = 1;
 	if (n < 0)
+	{
+		n *= -1;
 		len++;
-	while (n / 10 != 0)
+	}
+	while (n / 10 > 0)
 	{
 		n /= 10;
 		len++;
@@ -27,36 +30,34 @@ static int	nlen(int n)
 	return (len);
 }
 
-static char	ntochr(int n)
+static char	*n_tochar(char *str, size_t len, size_t n, int is_negative)
 {
-	if (n < 10)
-		return (n + 48);
-	else
-		return (ntochr(n % 10));
+	str[len] = 0;
+	while (len--)
+	{
+		str[len] = (n % 10) + 48;
+		n /= 10;
+	}
+	if (is_negative)
+		str[0] = '-';
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
+	int		is_negative;
 	size_t	len;
 	char	*str;
-	int		n_temp;
 
-	n_temp = n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = nlen(n_temp);
-	str = ft_calloc(len + 1, sizeof(char));
-	if (!str)
-		return (0);
+	len = n_len(n);
+	is_negative = 0;
 	if (n < 0)
 	{
-		str[0] = '-';
-		n_temp *= -1;
+		is_negative = 1;
+		n *= -1;
 	}
-	while (len > 0)
-	{
-		str[len] = ntochr(n_temp);
-		n_temp /= 10;
-		len--;
-	}
+	str = malloc(len + 1);
+	if (!str)
+		return (0);
+	return (n_tochar(str, len, (unsigned int)n, is_negative));
 }

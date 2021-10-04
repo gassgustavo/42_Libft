@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 01:19:05 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 23:27:47 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 23:44:27 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 	size_t	dest_len;
 
 	i = ft_strlen(dest);
-	dest_len = i;	
+	dest_len = i;
 	j = 0;
 	if (i < size)
 	{
