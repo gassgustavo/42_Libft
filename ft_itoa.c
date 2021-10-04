@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 01:02:25 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/04 01:24:00 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/04 01:25:16 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,18 @@ char	*ft_itoa(int n)
 	len = nlen(n);
 	n_temp = n;
 	if (n < 0)
+	{
 		n_temp *= -1;
-	str = (char *)ft_calloc((ft_negative(n) + len + 1), sizeof(char));
+		len++;
+	}
+	str = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!str)
 		return (0);
 	if (ft_negative(n))
 		str[0] = '-';
 	while (len > 0)
 	{
-		str[len + ft_negative(n) - 1] = ntochar(n_temp);
+		str[len - 1] = ntochar(n_temp);
 		n_temp = n_temp / 10;
 		len--;
 	}
