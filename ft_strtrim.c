@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 14:32:19 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/03 21:52:51 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/03 21:53:43 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *str, char const *set)
 	if (!str || !set)
 		return (0);
 	start = 0;
-	while (str[start] && ft_strchr(set, str[start]))
+	while (str[start] && ft_strchr(set, str[0]))
 		start++;
 	end = ft_strlen(str);
 	while (end && ft_strchr(set, str[end]))
