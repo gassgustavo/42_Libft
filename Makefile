@@ -6,18 +6,12 @@
 #    By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 16:35:31 by gmoraes-          #+#    #+#              #
-#    Updated: 2021/10/02 21:05:30 by gmoraes-         ###   ########.fr        #
+#    Updated: 2021/10/05 09:57:10 by gmoraes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # STATIC LIBRARY
 NAME = libft.a
-
-# COMPILER
-CC = gcc
-
-# FLAGS
-FLAGS = -Wall -Werror -Wextra
 
 # SOURCE FILES (Total: 14)
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -25,13 +19,18 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strchr.c ft_strrchr.c ft_strdup.c ft_strnstr.c \
 		ft_memset.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c \
 		ft_toupper.c ft_tolower.c ft_atoi.c ft_bzero.c ft_calloc.c \
-		\
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_itoa.c ft_split.c \
 
+# COMPILER
+CC = gcc
+
+# FLAGS
+FLAGS = -Wall -Werror -Wextra
+
 # OBJECT FILES
-OBJ = $(SRCS:%.c=%.o)
+OBJ = $(SRCS:.c=.o)
 
 # REMOVE
 RM = rm -f
