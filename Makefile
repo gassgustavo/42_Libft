@@ -6,14 +6,14 @@
 #    By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/21 16:35:31 by gmoraes-          #+#    #+#              #
-#    Updated: 2021/10/05 09:57:10 by gmoraes-         ###   ########.fr        #
+#    Updated: 2021/10/06 09:46:43 by gmoraes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # STATIC LIBRARY
 NAME = libft.a
 
-# SOURCE FILES (Total: 14)
+# SOURCE FILES
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strncmp.c \
 		ft_strchr.c ft_strrchr.c ft_strdup.c ft_strnstr.c \
@@ -23,14 +23,14 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_itoa.c ft_split.c \
 
+# OBJECT FILES
+OBJ = $(SRCS:.c=.o)
+
 # COMPILER
 CC = gcc
 
 # FLAGS
 FLAGS = -Wall -Werror -Wextra
-
-# OBJECT FILES
-OBJ = $(SRCS:.c=.o)
 
 # REMOVE
 RM = rm -f
@@ -55,5 +55,7 @@ fclean:
 
 # CLEAN AND RECOMPILE 
 re:
-	make fclean
+	make clean
 	make all
+
+.PHONY: all clean fclean re
