@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 10:10:12 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/08 10:57:33 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/08 11:17:00 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,9 @@ char	*ft_strjoin(char const *str1, char const *str2)
 	str1_len = ft_strlen(str1);
 	str2_len = ft_strlen(str2);
 	new_str = calloc((str1_len + str2_len + 1), sizeof(char));
-	if (new_str)
-	{
-		ft_strlcpy(new_str, str1, str1_len);
-		ft_strlcat(new_str, str2, (str1_len + 1));
-	}
-	return (new_str);
+	if (!new_str)
+		return (0);
+	ft_strlcpy(new_str, str1, str1_len);
+	ft_strlcat(new_str, str2, str1_len);
+		return (new_str);
 }
