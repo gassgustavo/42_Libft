@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:50:54 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/10/05 10:06:25 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/08 10:33:18 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	while (i < n)
 	{
 		if (str1_temp[i] != str2_temp[i])
-			return (str1_temp[i] - str2_temp[i]);
+			return ((int)(str1_temp[i] - str2_temp[i]));
 		i++;
 	}
 	return (0);

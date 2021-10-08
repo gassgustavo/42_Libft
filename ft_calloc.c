@@ -6,7 +6,7 @@
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 17:01:27 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/28 10:29:04 by gmoraes-         ###   ########.fr       */
+/*   Updated: 2021/10/08 10:38:21 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*ptr;
 
-	ptr = malloc((nmemb * size) * sizeof(char));
+	ptr = malloc((nmemb * size));
 	if (!ptr)
 		return (0);
 	ft_memset(ptr, 0, (nmemb * size));
