@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoraes- <gmoraes-l@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 09:37:54 by gmoraes-          #+#    #+#             */
-/*   Updated: 2021/09/28 10:30:43 by gmoraes-         ###   ########.fr       */
+/*   Created: 2021/10/15 09:41:30 by gmoraes-          #+#    #+#             */
+/*   Updated: 2021/10/15 09:41:30 by gmoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	t_list	*temp;
+
+	if (!lst)
+		return (0);
+	temp = lst;
+	while (temp->next)
+		temp = temp->next;
+	return (temp);
 }
